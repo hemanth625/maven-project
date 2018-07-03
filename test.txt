@@ -1,1 +1,11 @@
-Hi this is a test file
+---
+ - hosts: 172.31.4.37 172.31.22.248
+   user: ansibleuser
+   vars:
+      msg: "hello world"
+   tasks:
+    - name: msg copy
+      copy:
+       dest: /home/ansibleuser/testfile
+       content: "{{ msg }}"
+}
